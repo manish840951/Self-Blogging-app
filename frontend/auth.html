@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Auth — Blogging App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Welcome</h1>
+    <p>Choose an option to continue</p>
+    <div style="margin-bottom:16px">
+      <strong>Login</strong>
+    </div>
+
+    <section id="login">
+      <h2>Login</h2>
+      <form id="loginFormAuth">
+        <input id="li_username" placeholder="username" required />
+        <input id="li_password" type="password" placeholder="password" required />
+        <button type="submit">Login</button>
+      </form>
+      <div id="loginStatus"></div>
+    </section>
+
+    <footer style="margin-top:16px">
+      <a href="index.html">Go to app</a>
+    </footer>
+  </main>
+  <script src="auth.js"></script>
+</body>
+</html>

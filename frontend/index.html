@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blogging App - Frontend</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Blogging App (Frontend)</h1>
+    <div id="frontendDebug" style="color:#bbb;margin-bottom:8px"></div>
+    <div id="userBadge" style="position:absolute; right:18px; top:18px; color:#ddd; font-weight:600"></div>
+
+    <section id="auth">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input id="username" placeholder="username" required />
+        <input id="password" type="password" placeholder="password" required />
+        <button type="submit">Login</button>
+      </form>
+      <div id="authStatus"></div>
+      <button id="logoutBtn" style="display:none">Logout</button>
+
+      <hr />
+      <h3>Sign Up</h3>
+      <form id="signupForm">
+        <input id="su_username" placeholder="username" required />
+        <input id="su_email" type="email" placeholder="email" required />
+        <input id="su_password" type="password" placeholder="password" required />
+        <button id="signupBtn" type="submit">Sign Up</button>
+      </form>
+      <div id="signupStatus"></div>
+    </section>
+
+    <!-- Auth handled on a separate page (link intentionally removed) -->
+
+    <section id="create" style="display:none">
+      <h2>Create / Update Blog</h2>
+      <form id="createForm">
+        <!-- id may be provided when creating a new post; it becomes readonly when updating an existing post -->
+        <input id="blogId" type="number" placeholder="id (integer)" value="" />
+        <input id="title" placeholder="title" required maxlength="50" />
+        <textarea id="content" placeholder="content" required></textarea>
+        <button id="postBtn" type="submit">Post</button>
+        <button id="cancelUpdateBtn" type="button" style="display:none">Cancel Update</button>
+      </form>
+      <div id="postStatus"></div>
+    </section>
+
+    <section id="search" style="display:none; margin-top:18px">
+      <h2>Find Blogs</h2>
+      <div>
+        <input id="searchInput" placeholder="Search by id or title" />
+        <button id="searchBtn">Search</button>
+      </div>
+      <div id="searchResults"></div>
+    </section>
+
+    <!-- Find Blogs removed — use the auth page for signup/login and main page shows blog controls -->
+
+    <section id="blogs" style="display:none">
+      <h2>Your Blogs</h2>
+      <div id="blogsList">(no blogs yet)</div>
+      <button id="refreshBtn">Refresh</button>
+    </section>
+
+    <footer>
+      <small>Backend expected at <strong>http://localhost:8000</strong>. See README for CORS note.</small>
+    </footer>
+  </main>
+  <script src="app.clean.js"></script>
+</body>
+</html>
